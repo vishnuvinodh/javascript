@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        width: 100%;
+        height: 100%;
+        background-color: greenyellow;
+        font-size: 35px;
+        
+    }
+    .tt{
+        width: 50%;
+        
+    }
+    th{
+        height: 50px;
+    }
+    input{
+        width: 100%;
+        height: 50px;
+        background-color: rgb(224, 245, 180);
+        font-size: 20pxpx;
+    }
+
+</style>
+<body>
+    <table style="border:1px solid black; " class="tt">
+        <tr>
+          <th colspan="3"><input id="result"></input></th>
+          <th><button onclick="clear('c')">c</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="cal('1')">1</button></th>
+            <th><button onclick="cal('2')">2</button></th>
+            <th><button onclick="cal('3')">3</button></th>
+            <th><button onclick="cal('/')">/</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="cal('4')">4</button></th>
+            <th><button onclick="cal('5')">5</button></th>
+            <th><button onclick="cal('6')">6</button></th>
+            <th><button onclick="cal('*')">*</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="cal('7')">7</button></th>
+            <th><button onclick="cal('8')">8</button></th>
+            <th><button onclick="cal('9')">9</button></th>
+            <th><button onclick="cal('-')">-</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="cal('0')">0</button></th>
+            <th><button onclick="cal('.')">.</button></th>
+            <th><button onclick="calle('=')">=</button></th>
+            <th><button onclick="cal('+')">+</button></th>
+
+        </tr>
+    </table >
+    <script>
+        let cal=(x)=>{
+document.getElementById('result').value+=x;
+        }
+        let calle=()=>{
+       let c=document.getElementById('result').value;
+       if(c==='')
+       {
+        alert("Please enter a valid exprassion");
+       }
+       else
+       {
+        let p=eval(c)
+        document.getElementById('result').value=p;
+       }
+        }
+        let clear=()=>{
+            document.getElementById('result').value=" ";
+        }
+    </script>
+</body>
+</html>
